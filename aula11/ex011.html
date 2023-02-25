@@ -7,8 +7,8 @@
     <title>Nacionalidade</title>
 </head>
 <body>
-    <h1>Vamos verificar se você é brasileir@?</h1>
-    <p>Nascido em: <input type="text" name="txtpais" id="txtpais"></p>
+    <h1>Vamos verificar se você é brasileiro?</h1>
+    <p>Nascido no: <input type="text" name="txtpais" id="txtpais"></p>
     <input type="button" value="Verificar" onclick="verificar()">
     <div id="res">
 
@@ -17,12 +17,13 @@
     <script>
         function verificar() { //Dando erro!
             var txtp = window.document.querySelector('input#txtpais')
-            var res = wimdow.document.querySelector('div#res')
-
-            if (pais == Brasil) {
-                res.innerHTML += `<p>Você é Brasileir@</p>`
+            var res = window.document.querySelector('div#res')
+            var pais = String(txtp.value)
+            res.innerHTML = `<p>Você nasceu no ${pais}</p>`
+            if (pais == 'Brasil') {
+                res.innerHTML += `<p>Você é Brasileiro</p>`
             } else {
-                res.innerHTML += `<p>Você é Estrangeir@</p>`
+                res.innerHTML += `<p>Você é Estrangeiro</p>`
             }
         }
     </script>
